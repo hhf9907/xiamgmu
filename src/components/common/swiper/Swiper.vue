@@ -1,3 +1,4 @@
+
 <template>
     <div id="hy-swiper">
       <div class="swiper" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
@@ -50,7 +51,7 @@
 
         // 2.开启定时器
         this.startTimer();
-      }, 100)
+      }, 500)
     },
     methods: {
 		  /**

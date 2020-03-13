@@ -8,7 +8,7 @@
     </div>
     <div class="info-key">{{detailInfo.detailImage[0].key}}</div>
     <div class="info-list">
-      <img v-for="(item, index) in detailInfo.detailImage[0].list" :src="item" alt="">
+      <img v-for="(item, index) in detailInfo.detailImage[0].list" :src="item" alt="" @load="imgeLoad">
     </div>
   </div>
 </template>
@@ -16,11 +16,29 @@
 <script>
 	export default {
 		name: "DetailGoodsInfo",
+      data(){
+		return {
+		  counter:0,
+          imagesLenght:0
+        }
+      },
     props: {
       detailInfo: {
         type: Object
       }
-    }
+    },
+      methods:{
+        imgeLoad(){
+          if(++this.counter ===this.imagesLenght) { //判断所有的图片加载完了进行一次回调就行了
+            this.$emit('goodImgLoad')
+          }
+        }
+      },
+      watch:{ //   监听某个属性的变化
+		  detailInfo(){
+		    this.imagesLenght = this.detailInfo.detailImage[0].list.length
+          }
+      }
 	}
 </script>
 

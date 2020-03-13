@@ -8,7 +8,7 @@
 
 <script>
   export default {
-    name: "TabBra-con",
+    name: "TabBar-con",
     props:{
       path:String,
       activeColor:{
@@ -33,7 +33,7 @@
 </script>
 
 <style scoped>
-    @import "../../assets/css/base.css";
+    @import "../../../assets/css/base.css";
 
     .tab-bar-item img {
         height: 24px;

@@ -2,10 +2,11 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-
-export default new Vuex.Store({
-  state: {
-  },
+const state = {
+  sy:0
+}
+ const store = new Vuex.Store({
+  state,
   mutations: {
   },
   actions: {
@@ -13,3 +14,5 @@ export default new Vuex.Store({
   modules: {
   }
 })
+
+export default store
